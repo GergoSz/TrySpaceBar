@@ -2,14 +2,22 @@
 <html>
   <head>
     <script type="text/javascript" src="p5.js"></script>
+    <script type="text/javascript" src="p5.dom.js"></script>
     <script type="text/javascript" src="general.js"></script>
     <script type="text/javascript" src="spider.js"></script>
     <script type="text/javascript" src="population.js"></script>
+    <script src="jscolor.js"></script>
 
+     <link rel="stylesheet" href="main.css">
+    
     <meta charset="utf-8">
     <title>Spiderps</title>
   </head>
   <body>
+
+  Mutation rate: <input type="range" min="1" max="10" value="0.5" class="slider" id="myRange" onchange="setMutationRate(this.value)">
+  Color: <input id="picker" class="jscolor {onFineChange:'setTarget(this)'}" value="ab2567">
+
 
   </body>
 </html>
