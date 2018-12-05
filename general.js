@@ -7,6 +7,10 @@ var r,g,b,a = 0;
 
 function setup(){
 
+  target[0] = 51;
+  target[1] = 51;
+  target[2] = 51;
+
   createCanvas(1000, 600);
   population = new Population(target, mutationRate, popMax);
 
@@ -36,9 +40,10 @@ function setTarget(picker){
   target[0] = Math.round(picker.rgb[0]);
   target[1] = Math.round(picker.rgb[1]);
   target[2] = Math.round(picker.rgb[2]);
-  target[3] = a;
+  target[3] = 255;
 }
 
 function setMutationRate(mutRate){
-  mutationRate = mutRate;
+  mutationRate = mutRate/10;
+  console.log(mutationRate);
 }
