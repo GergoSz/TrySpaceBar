@@ -2,7 +2,7 @@ var population = [];
 var popMax = 50;
 var mutationRate = 0.01;
 var target = [3];
-var lifeSpan = 1;
+var lifeSpan = 100;
 var r,g,b,a = 0;
 var repalySpeed = 1;
 var canvas;
