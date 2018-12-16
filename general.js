@@ -2,8 +2,10 @@ var population = [];
 var popMax = 50;
 var mutationRate = 0.01;
 var target = [3];
-var lifeSpan = 10000;
+var lifeSpan = 1;
 var r,g,b,a = 0;
+var repalySpeed = 1;
+var canvas;
 
 function setup(){
 
@@ -11,7 +13,8 @@ function setup(){
   target[1] = 51;
   target[2] = 51;
 
-  createCanvas(1000, 600);
+  centerCanvas();
+
   population = new Population(target, mutationRate, popMax);
 
   /*for (var i = 0; i < 10; i++) {
@@ -28,11 +31,12 @@ function keyPressed(){
 function draw(){
   background(target[0], target[1], target[2]);
   population.live();
+
   if(frameCount % lifeSpan === 0){
-    population.grow();
+    //population.grow();
     population.evaluate();
     population.selection();
-  //  population.getDNA();
+    //population.getDNA();
   }
 }
 
@@ -46,4 +50,20 @@ function setTarget(picker){
 function setMutationRate(mutRate){
   mutationRate = mutRate/10;
   console.log(mutationRate);
+}
+
+function setSpeed(speed){
+  lifeSpan = 101 - speed;
+  console.log(lifeSpan);
+}
+
+function centerCanvas() {
+  canvas = createCanvas(windowWidth, windowHeight - 100);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height + 100) / 2;
+  canvas.position(x, y);
+}
+
+function windowResized() {
+  centerCanvas();
 }

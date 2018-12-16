@@ -1,4 +1,20 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: #f8f8f8;
+	background-color: #333333;
+}
+
+h1{
+	text-align: center;
+}
+
 .slider{
 	width: auto;
 	border: 1px solid black;
+}
+
+#positionCenter{
+	margin-left: 25%; 
+	margin-top: 20px;
 }
